@@ -1,4 +1,5 @@
 import com.typesafe.sbt.SbtGit._
+
 name := "my-first-scala"
 
 version := "1.0"
@@ -94,6 +95,12 @@ lazy val website = (
   makeNameOfProject("website").
   dependsOn(common).
   settings()
+  )
+
+lazy val scalastylePlugin = (
+  makeNameOfProject("scalastyle-plugin").
+//    dependsOn(common).
+    settings()
   )
 
 /**
@@ -239,3 +246,5 @@ def PreownedKittenProject(name: String): Project = (
   Project(name, file(name))
     .settings(versionWithGit:_*)
 )
+
+

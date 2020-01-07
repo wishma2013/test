@@ -62,7 +62,6 @@ checkNoLocalChanges := {
 }
 
 
-
 def releaseAction(state: State, version: String): State = {
 //  "all test integrationTests" ::
   "test" ::
@@ -76,3 +75,22 @@ val ReleaseCommand =
 
 
 commands += ReleaseCommand
+
+val releaseHelp = Help (
+  Seq(
+    "release <verison>" -> "Runs the release script for a given version number"
+  ),
+  Map (
+    "release" ->
+      """|Runs our release script. This will:
+        |1.Run all the tests.
+        |2.Tag the git repo with the version number.
+        |3.Reload the build with the new version number form the git tag
+        |4.publish all the artifacts""".stripMargin
+  )
+)
+
+val releaseCommand = Command("release", releaseHelp)(releaseParser)(releaseAction)
+
+commands += releaseCommand
+

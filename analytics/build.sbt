@@ -1,2 +1,1 @@
-
-//libraryDependencies ++= BuildUtils.loggingDependencies()
+libraryDependencies ++= BuildUtils.loggingDependencies()
