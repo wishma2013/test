@@ -103,6 +103,12 @@ lazy val scalastylePlugin = (
     settings()
   )
 
+lazy val scalastyleTest = (
+  makeNameOfProject("scalastyle-test").
+//    dependsOn(common).
+    settings()
+  )
+
 /**
  * 这里如果用"+="会报错"sbt.TaskKey[Seq[sbt.File]] cannot be appended to Seq[sbt.Task[Seq[java.io.File]]]"
  * 貌似是类型的问题。网上(https://github.com/sbt/sbt/issues/971)说如果类型不匹配改成"<+="
