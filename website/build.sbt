@@ -1,11 +1,12 @@
+
+import AssemblyKeys._
 //
-//import AssemblyKeys._
-////assemblySettings
-////
+assemblySettings
 //
-//lazy val assemblyArtifact = Def.setting {
-//  artifact.value.copy(classifier = Some("assembly"))
-//}
-//artifacts += assemblyArtifact.value
-//packagedArtifacts +=
-//  Assembly -> assemblyArtifact.value
+
+lazy val assemblyArtifact = Def.setting {
+  artifact.value.copy(classifier = Some("assembly"))
+}
+artifacts += assemblyArtifact.value
+packagedArtifacts +=
+  Assembly -> assemblyArtifact.value

@@ -105,7 +105,7 @@ lazy val scalastylePlugin = (
 
 lazy val scalastyleTest = (
   makeNameOfProject("scalastyle-test").
-//    dependsOn(common).
+    dependsOn(common).
     settings()
   )
 
