@@ -5,3 +5,26 @@
  *                       ^
  */
 libraryDependencies ++= BuildUtils.loggingDependencies()
+
+/**
+ * start 2020-01-14 14:30:35
+ */
+import com.typesafe.sbt.SbtNativePackager._
+import NativePackagerKeys._
+
+//-----------
+// Packaging
+//-----------
+mainClass := Some("org.moly.Analytics")
+packageArchetype.java_server
+
+
+bashScriptExtraDefines += """addJava "-
+         Danalytics.properties=${app_home}/../conf/analytics.properties""""
+batScriptExtraDefines += """set _JAVA_OPTS=%_JAVA_OPTS% -
+         Danalytics.properties=%ANALYTICS_HOME%\\conf\\analytics.properties"""
+
+
+/**
+ * end 2020-01-14 14:30:35
+ */
